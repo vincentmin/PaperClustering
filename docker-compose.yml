@@ -1,0 +1,13 @@
+version: "2.3"
+services:
+  nlp:
+    build:
+      context: .
+      dockerfile: "docker/jupyter.Dockerfile"
+    volumes:
+      - .:/app
+    ports:
+      - 8888:8888
+    env_file:
+      - dev.env
+    # runtime: nvidia
